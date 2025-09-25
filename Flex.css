@@ -1,0 +1,265 @@
+/* Fuente y Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header - Logo */
+.logo {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #4caf50;
+  border-radius: 50%;
+}
+
+.logo .text h1 {
+  font-size: 1.5rem;
+}
+
+.logo .text p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Banner */
+.banner {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner .textos h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.banner .textos p {
+  font-size: 1.1rem;
+}
+
+/* Navegación */
+nav {
+  background-color: #333;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-list li {
+  margin: 10px 15px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: background 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+/* Introducción */
+.intro {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.intro h3 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Tarjetas (Grid) */
+.contenedor-conciertos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+  padding: 80px;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card .textos {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Botones */
+.boton {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #388e3c;
+}
+
+.boton-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+  /* Sección de Videos */
+.videos {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.videos h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Usamos Grid */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Caja de cada video con flex para centrar */
+.video-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #4caf50;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+/* ========================= */
+/* MEDIA QUERIES (Responsive)*/
+/* ========================= */
+
+/* Móviles pequeños (hasta 600px) */
+@media (max-width: 600px) {
+  .logo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner {
+    height: 200px;
+    padding: 20px;
+  }
+
+  .contenedor-conciertos {
+    grid-template-columns: 1fr; /* tarjetas en columna */
+    padding: 30px;
+    gap: 25px;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr; /* videos uno debajo del otro */
+  }
+}
+
+/* Tablets (601px a 900px) */
+@media (max-width: 900px) {
+  .contenedor-conciertos {
+    grid-template-columns: repeat(2, 1fr); /* dos tarjetas por fila */
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr); /* dos videos por fila */
+  }
+}
+
+/* Escritorios grandes (más de 1200px) */
+@media (min-width: 1200px) {
+  .contenedor-conciertos {
+    grid-template-columns: repeat(3, 1fr); /* tres tarjetas por fila */
+  }
+
+  .videos-grid {
+    grid-template-columns: repeat(3, 1fr); /* tres videos por fila */
+  }
+}
